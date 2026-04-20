@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARMIN - UI", "CARMIN - UI.csproj", "{FF4B7DDF-0CA1-466C-AC5E-DD1D3F8DF096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARMIN - BE", "..\CARMIN - BE\CARMIN - BE.csproj", "{F95AE4B0-7102-47D3-AEF7-6EBBADCF70E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARMIN - BLL", "..\CARMIN - BLL\CARMIN - BLL.csproj", "{3D6D94A7-5122-4F5B-AE40-EA8C5DEB942F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARMIN - MAPPER", "..\CARMIN - MAPPER\CARMIN - MAPPER.csproj", "{6871F9FB-8C62-47F9-833C-3C2F919BA2BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARMIN - DAL", "..\CARMIN - DAL\CARMIN - DAL.csproj", "{10003D46-A0FD-4810-ABB5-5B762E53D6C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF4B7DDF-0CA1-466C-AC5E-DD1D3F8DF096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4B7DDF-0CA1-466C-AC5E-DD1D3F8DF096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4B7DDF-0CA1-466C-AC5E-DD1D3F8DF096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4B7DDF-0CA1-466C-AC5E-DD1D3F8DF096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95AE4B0-7102-47D3-AEF7-6EBBADCF70E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95AE4B0-7102-47D3-AEF7-6EBBADCF70E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95AE4B0-7102-47D3-AEF7-6EBBADCF70E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95AE4B0-7102-47D3-AEF7-6EBBADCF70E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6D94A7-5122-4F5B-AE40-EA8C5DEB942F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6D94A7-5122-4F5B-AE40-EA8C5DEB942F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6D94A7-5122-4F5B-AE40-EA8C5DEB942F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6D94A7-5122-4F5B-AE40-EA8C5DEB942F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6871F9FB-8C62-47F9-833C-3C2F919BA2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6871F9FB-8C62-47F9-833C-3C2F919BA2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6871F9FB-8C62-47F9-833C-3C2F919BA2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6871F9FB-8C62-47F9-833C-3C2F919BA2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10003D46-A0FD-4810-ABB5-5B762E53D6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10003D46-A0FD-4810-ABB5-5B762E53D6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10003D46-A0FD-4810-ABB5-5B762E53D6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10003D46-A0FD-4810-ABB5-5B762E53D6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0A751CE-86FF-4FC6-ADCB-E09C7956EA02}
+	EndGlobalSection
+EndGlobal
