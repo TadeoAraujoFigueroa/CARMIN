@@ -1,5 +1,9 @@
 # CARMIN
 
+
+![C#](https://img.shields.io/badge/language-C%23-purple)
+![.NET](https://img.shields.io/badge/.NET-WinForms-blue)
+
 Sistema de gestión para papelerías y negocios gráficos.
 
 ## Tecnologías
