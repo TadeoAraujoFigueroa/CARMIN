@@ -18,29 +18,34 @@
   <ItemGroup>
     <ProjectReference Include="..\CARMIN - BE\CARMIN - BE.csproj" />
     <ProjectReference Include="..\CARMIN - BLL\CARMIN - BLL.csproj" />
+    <ProjectReference Include="..\CARMIN - DAL\CARMIN - DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="UI - Properties\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\tadeo\Desktop\CARMIN PROJECT\CODE\CARMIN - APP\.editorconfig" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="ARCHIVOS\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
   <ItemGroup>
+    <None Remove="ARCHIVOS\logo\logo.png" />
+    <None Remove="ARCHIVOS\recursos\cruz.png" />
+    <None Remove="ARCHIVOS\recursos\flecha-02.png" />
+    <None Remove="ARCHIVOS\recursos\pregunta.png" />
+    <None Remove="ARCHIVOS\recursos\tilde.png" />
+    <None Remove="ARCHIVOS\sqlite\carmin.db" />
+    <None Remove="ARCHIVOS\sql\001_create_clientes.sql" />
+    <None Remove="ARCHIVOS\sql\002_create_core_tables.sql" />
+    <None Remove="ARCHIVOS\sql\003_create_impresora_relations.sql" />
+    <None Remove="ARCHIVOS\sql\004_merge_detalles_pedido_into_pedidos.sql" />
     <None Remove="Poppins-Regular.ttf" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Poppins-Regular.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
-  <ItemGroup>
-    <None Include="C:\Users\tadeo\Desktop\CARMIN PROJECT\CODE\CARMIN - APP\.editorconfig" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

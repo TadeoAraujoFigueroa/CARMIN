@@ -1,0 +1,130 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS ConfiguracionesNegocio
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    HorasProductivasMensuales INTEGER NOT NULL,
+    MargenGanancia INTEGER NOT NULL,
+    PorcentajeMaquinaria INTEGER NOT NULL,
+    PorcentajeMerma INTEGER NOT NULL,
+    HoraManoDeObra NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Gastos
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fecha TEXT NOT NULL,
+    Monto NUMERIC NOT NULL,
+    Descripcion TEXT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Ingresos
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fecha TEXT NOT NULL,
+    Monto NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Servicios
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    ImporteMensual NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Presupuestos
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    CostoTotal NUMERIC NOT NULL,
+    MontoTotal NUMERIC NOT NULL,
+    Descuento NUMERIC NOT NULL,
+    HorasDisenio NUMERIC NOT NULL,
+    HorasTrabajo NUMERIC NOT NULL,
+    MargenGanancia NUMERIC NOT NULL,
+    MargenMerma NUMERIC NOT NULL,
+    MargenMaquinaria NUMERIC NOT NULL,
+    Recargo NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Pedidos
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    IdCliente INTEGER NOT NULL,
+    IdPresupuesto INTEGER NOT NULL,
+    FOREIGN KEY (IdCliente) REFERENCES Clientes (Id),
+    FOREIGN KEY (IdPresupuesto) REFERENCES Presupuestos (Id)
+);
+
+CREATE TABLE IF NOT EXISTS Impresoras
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Modelo TEXT NOT NULL,
+    Marca TEXT NOT NULL,
+    Nombre TEXT NOT NULL,
+    Tecnologia TEXT NOT NULL,
+    TipoImpresora TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Insumos
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    Cantidad NUMERIC NULL,
+    UnidadMedida TEXT NULL,
+    CostoInsumo NUMERIC NULL,
+    Stock NUMERIC NULL,
+    TipoDeCalculo TEXT NULL,
+    TipoInsumo TEXT NOT NULL,
+    Contenido INTEGER NULL,
+    UnidadContenido TEXT NULL,
+    Precio NUMERIC NULL,
+    Rendimiento INTEGER NULL,
+    EsColor INTEGER NULL
+);
+
+CREATE TABLE IF NOT EXISTS DetallesImpresion
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    CostoUnitario NUMERIC NOT NULL,
+    Cantidad INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS DetallesPedido
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ClienteId INTEGER NOT NULL,
+    Estado TEXT NOT NULL,
+    EstadoDePago TEXT NOT NULL,
+    FechaDeEntrega TEXT NOT NULL,
+    Importe NUMERIC NOT NULL,
+    TiempoTotalDeProduccion NUMERIC NOT NULL,
+    FOREIGN KEY (ClienteId) REFERENCES Clientes (Id)
+);
+
+CREATE TABLE IF NOT EXISTS InformesDeStock
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fecha TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ItemsPresupuesto
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    Cantidad NUMERIC NOT NULL,
+    PrecioUnitario NUMERIC NOT NULL,
+    Descuento NUMERIC NOT NULL,
+    Recargo NUMERIC NOT NULL,
+    Costo NUMERIC NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS PerfilesImpresion
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Nombre TEXT NOT NULL,
+    Precio NUMERIC NOT NULL,
+    FactorMultiplicador NUMERIC NOT NULL,
+    EsColor INTEGER NOT NULL
+);

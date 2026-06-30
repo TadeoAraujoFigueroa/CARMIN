@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CARMIN___BE.Entities
 {
-    internal class PerfilImpresion
+    public class PerfilImpresion
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public decimal Precio { get; set; } = 0m;
+        public decimal FactorMultiplicador { get; set; } = 1m;
+        public bool EsColor { get; set; }
     }
 }

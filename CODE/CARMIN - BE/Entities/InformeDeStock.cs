@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CARMIN___BE.Entities
 {
-    internal class InformeDeStock
+    public class InformeDeStock
     {
+        public InformeDeStock() { }
+
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

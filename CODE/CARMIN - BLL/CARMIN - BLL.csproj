@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CARMIN - BE\CARMIN - BE.csproj" />
+    <ProjectReference Include="..\CARMIN - DAL\CARMIN - DAL.csproj" />
     <ProjectReference Include="..\CARMIN - MAPPER\CARMIN - MAPPER.csproj" />
   </ItemGroup>
 

@@ -20,8 +20,5 @@ namespace CARMIN___BE.Entities
         public decimal Descuento { get; set; }
         public decimal Recargo { get; set; }
         public decimal Costo { get; set; }
-
-
-
     }
 }

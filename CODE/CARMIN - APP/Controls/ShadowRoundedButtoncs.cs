@@ -25,13 +25,14 @@ namespace CARMIN___APP.Controls
             private bool _isHovering = false;
 
         
+
             public ShadowRoundedButton()
             {
                 DoubleBuffered = true;
                 ResizeRedraw = true;
                 Cursor = Cursors.Hand;
 
-                PrivateFontCollection pfc = new PrivateFontCollection();
+               // PrivateFontCollection pfc = new PrivateFontCollection();
 
                 /*
                 string path = Path.Combine(Application.StartupPath, "Poppins-Regular.ttf");
@@ -45,16 +46,16 @@ namespace CARMIN___APP.Controls
                 
                 Font = new Font("Segoe UI", 10F, FontStyle.Bold);
 
-                Size = new Size(160, 48);
+                //Size = new Size(160, 48);
 
-                BackColor = Color.Transparent;
+            //BackColor = Color.Transparent;
+            BackColor = Color.FromArgb(243, 238, 224);
 
-                SetStyle(
+            SetStyle(
                     ControlStyles.AllPaintingInWmPaint |
                     ControlStyles.UserPaint |
                     ControlStyles.ResizeRedraw |
-                    ControlStyles.OptimizedDoubleBuffer |
-                    ControlStyles.SupportsTransparentBackColor,
+                    ControlStyles.OptimizedDoubleBuffer,
                     true);
             }
 
@@ -166,7 +167,8 @@ namespace CARMIN___APP.Controls
 
             protected override void OnPaint(PaintEventArgs e)
             {
-                base.OnPaint(e);
+               
+            base.OnPaint(e);
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
@@ -175,14 +177,14 @@ namespace CARMIN___APP.Controls
 
                 Rectangle shadowRect = new Rectangle(
                     _shadowOffset,
-                    _shadowOffset - lift,
+                    _shadowOffset + (_isHovering ? 3 : 0),
                     Width - _shadowOffset - 1,
                     Height - _shadowOffset - 1
                 );
 
                 Rectangle buttonRect = new Rectangle(
                     0,
-                    -lift,
+                    0,
                     Width - _shadowOffset - 1,
                     Height - _shadowOffset - 1
                 );
@@ -208,6 +210,7 @@ namespace CARMIN___APP.Controls
                 e.Graphics.DrawPath(borderPen, buttonPath);
 
                 DrawButtonText(e.Graphics, buttonRect);
+
             }
 
             private void DrawButtonText(Graphics g, Rectangle rect)
@@ -267,6 +270,20 @@ namespace CARMIN___APP.Controls
                 base.OnClick(e);
             }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            AjustarFuente();
         }
+        public void AjustarFuente()
+        {
+            Font = new Font(
+                Font.FontFamily,
+                Math.Max(8, Width / 20),
+                FontStyle.Bold
+            );
+        }
+
+    }
 }
 

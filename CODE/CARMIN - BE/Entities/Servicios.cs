@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CARMIN___BE.Entities
 {
-    internal class Servicios
+    public class Servicios
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public decimal ImporteMensual { get; set; }
     }
 }

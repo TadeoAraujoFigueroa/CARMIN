@@ -37,14 +37,13 @@ namespace CARMIN___APP.Controls
             {
                 DoubleBuffered = true;
                 ResizeRedraw = true;
-                BackColor = Color.Transparent;
+                BackColor = Color.FromArgb(243, 238, 224);
 
                 SetStyle(
                     ControlStyles.AllPaintingInWmPaint |
                     ControlStyles.UserPaint |
                     ControlStyles.ResizeRedraw |
-                    ControlStyles.OptimizedDoubleBuffer |
-                    ControlStyles.SupportsTransparentBackColor,
+                    ControlStyles.OptimizedDoubleBuffer, 
                     true);
 
                 Padding = new Padding(18, _contentTopPadding, 18, 18);
@@ -207,12 +206,12 @@ namespace CARMIN___APP.Controls
                 if (panelRect.Width <= 0 || panelRect.Height <= 0)
                     return;
 
-                using (GraphicsPath shadowPath = GetRoundedPath(shadowRect, _borderRadius))
+                /*using (GraphicsPath shadowPath = GetRoundedPath(shadowRect, _borderRadius))
                 using (SolidBrush shadowBrush = new SolidBrush(_shadowColor))
                 {
                     e.Graphics.FillPath(shadowBrush, shadowPath);
                 }
-
+                */
                 using (GraphicsPath panelPath = GetRoundedPath(panelRect, _borderRadius))
                 using (SolidBrush fillBrush = new SolidBrush(_fillColor))
                 using (Pen borderPen = new Pen(_borderColor, _borderThickness))

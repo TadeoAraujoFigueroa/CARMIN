@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CARMIN___BE.Entities
 {
-    internal class Gasto
+    public class Gasto
     {
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public decimal Monto { get; set; }
+        public string? Descripcion { get; set; } = string.Empty;
     }
 }

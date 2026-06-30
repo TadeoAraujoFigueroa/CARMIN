@@ -20,5 +20,22 @@ namespace CARMIN___BLL.Helper
             Configuration = builder.Build();
         }
 
+        public static string GetRuta(string clave, params string[] segmentos)
+        {
+            var rutaConfigurada = Configuration[$"Rutas:{clave}"];
+
+            if (string.IsNullOrWhiteSpace(rutaConfigurada))
+            {
+                throw new InvalidOperationException(
+                    $"No se encontro la ruta 'Rutas:{clave}' en appsettings.json.");
+            }
+
+            var rutaBase = Path.IsPathRooted(rutaConfigurada)
+                ? rutaConfigurada
+                : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, rutaConfigurada);
+
+            return Path.GetFullPath(Path.Combine([rutaBase, .. segmentos]));
+        }
+
     }
 }

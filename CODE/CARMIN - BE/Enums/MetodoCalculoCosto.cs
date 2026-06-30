@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CARMIN___BE.Entities
+namespace CARMIN___BE.Enums
 {
-    internal class Producto
+    public enum MetodoCalculoCosto
     {
+        PorUnidad,
+        PorSuperficie
     }
 }
